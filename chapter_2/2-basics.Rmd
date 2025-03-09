@@ -1,0 +1,218 @@
+---
+title: "R Basics"
+---
+
+## The very basics
+
+
+```{r}
+0.15 * 19.71
+```
+
+```{r}
+
+coef_a <- 1
+coef_b <- 1
+coef_c <- -1
+
+coef_c
+
+```
+```{r}
+print(coef_a)
+
+
+```
+
+```{r}
+print((-coef_b + sqrt(coef_b^2 - 4*coef_a*coef_c))/(2*coef_a))
+
+print((-coef_b - sqrt(coef_b^2 - 4*coef_a*coef_c))/(2*coef_a))
+```
+
+```{r}
+
+log(8)
+
+```
+
+```{r}
+log(coef_a)
+
+```
+
+
+```{r}
+# obtener argumentos de la función
+
+args(log)
+
+```
+
+
+```{r}
+log(8, base = 2)
+
+```
+
+
+```{r}
+pi
+```
+
+```{r}
+Inf + 1
+
+```
+
+
+```{r}
+r_1 <- (-coef_b + sqrt(coef_b^2 - 4*coef_a*coef_c))/(2*coef_a)
+r_2 <- (-coef_b - sqrt(coef_b^2 - 4*coef_a*coef_c))/(2*coef_a)
+
+```
+
+```{r}
+a <- 2
+
+class(a)
+
+```
+
+```{r}
+#install.packages("dslabs")
+
+library(dslabs)
+
+
+class(murders)
+
+```
+
+```{r}
+str(murders)
+
+```
+
+```{r}
+
+head(murders)
+```
+
+
+```{r}
+
+murders$population
+```
+
+```{r}
+
+names(murders)
+```
+
+## Vectors
+
+```{r}
+
+pop <- murders$population
+length(pop)
+
+
+```
+
+```{r}
+class(pop)
+
+```
+
+```{r}
+
+class(murders$state)
+
+```
+
+```{r}
+
+z <- 3 == 2
+z
+
+```
+
+```{r}
+# ?Comparison
+class(z)
+
+```
+
+
+## Factors
+
+
+```{r}
+
+class(murders$region)
+
+```
+
+```{r}
+
+print(murders$region)
+
+```
+
+```{r}
+levels(murders$region)
+```
+
+```{r}
+
+region <- murders$region
+value <- murders$total
+
+print(region)
+
+region <- reorder(region, value, FUN = sum)
+print(region)
+
+levels(region)
+
+```
+
+## List
+
+```{r}
+
+record <- list(
+  name = "john Doe",
+  student_id = 1234,
+  grades = c(95, 82, 91, 97, 93),
+  final_grade = "A"
+)
+
+record
+
+```
+
+```{r}
+record$student_id
+
+```
+
+```{r}
+record[["student_id"]]
+```
+
+```{r}
+record2 <- list("john Doe", 1234)
+
+record2
+```
+
+
+```{r}
+
+record2[[1]]
+
+```
+
+
